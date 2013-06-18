@@ -17,7 +17,8 @@ public class LRUCache<E> {
 	 * @param string2
 	 */
 	public void put(String key, E item) {
-		
+		keys.remove(key);
+		keys.add(key);
 	}
 	
 	/**
@@ -32,8 +33,9 @@ public class LRUCache<E> {
 	 * @param string
 	 * @return
 	 */
-	public String get(String key) {
+	public E get(String key) {
 		// TODO 自動生成されたメソッド・スタブ
+		
 		return null;
 	}
 	
