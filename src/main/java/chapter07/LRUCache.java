@@ -1,6 +1,8 @@
 package chapter07;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author mind
@@ -9,14 +11,16 @@ import java.util.ArrayList;
  */
 public class LRUCache<E> {
 	
-	final ArrayList<String>	keys	= new ArrayList<String>();
+	final ArrayList<String>			keys	= new ArrayList<String>();
+	private final Map<String, E>	entries	= new HashMap<String, E>();
 	
 	
 	/**
-	 * @param string
-	 * @param string2
+	 * @param key 
+	 * @param item 
 	 */
 	public void put(String key, E item) {
+		entries.put(key, item);
 		keys.remove(key);
 		keys.add(key);
 	}
@@ -35,8 +39,11 @@ public class LRUCache<E> {
 	 */
 	public E get(String key) {
 		// TODO 自動生成されたメソッド・スタブ
-		
-		return null;
+		if (entries.containsKey(key)) {
+			keys.remove(key);
+			keys.add(key);
+		}
+		return entries.get(key);
 	}
 	
 }
