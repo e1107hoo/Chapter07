@@ -28,9 +28,9 @@ public class LRUCache<E> {
 	/**
 	 * @return
 	 */
-	public Integer size() {
+	public int size() {
 		// TODO 自動生成されたメソッド・スタブ
-		return 2;
+		return entries.size();
 	}
 	
 	/**
