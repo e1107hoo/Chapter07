@@ -25,10 +25,10 @@ public class LRUCacheTest {
 		
 		
 		@Before
-		public void setup() throws Exception {
+		public void setUp() throws Exception {
 			sut = new LRUCache<String>();
 			sut.put("A", "valueA");
-			sut.put("A", "valueB");
+			sut.put("B", "valueB");
 		}
 		
 		@Test
